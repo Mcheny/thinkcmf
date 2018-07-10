@@ -25,7 +25,7 @@ class IndexController extends HomeBaseController
         $data->appends($param);
         echo '<pre>';
         return $this->json( '0', '请求成功',$data->items());
-        echo '这里是前台接口啦啦啦';exit;
+        echo '这里是前台接口啦啦啦1';exit;
         return $this->fetch(':index');
     }
 }
