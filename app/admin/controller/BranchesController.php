@@ -11,16 +11,18 @@ use cmf\controller\AdminBaseController;
 
 class BranchesController extends AdminBaseController
 {
+    public static $lang_arr=array();
     public function _initialize()
     {
-
+        if(empty(self::$lang_arr)){
+            //self::$lang_arr=$this->read('zh-us');
+        }
     }
     public function index(){
         //读取语言包
-        $arr=$this->read('zh-us');
         $a['0']='活动新闻';
         $a['1']='产品';
-       print_r($this->changeLang($a,$arr)) ;
+       print_r($this->changeLang($a,self::$lang_arr)) ;
     }
 
 }
