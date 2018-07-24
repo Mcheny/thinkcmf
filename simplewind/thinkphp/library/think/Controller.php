@@ -248,4 +248,28 @@ class Controller
         exit(json_encode($res));
 
     }
+    //读取语言包
+        protected static function read($file){
+        str_replace('，',',',$file);
+        $tmp = explode(',',$file);
+        foreach ($tmp as $v){
+            $tmp_file= $_SERVER['DOCUMENT_ROOT'].'/thinkcmf-master/app/web/lang/'.$file.'.php';
+            if (file_exists($tmp_file)){
+              return  require($tmp_file);
+            }
+        }
+    }
+    /*
+ * $arr二维数组
+ * $lang_arr 读取到的语言包
+ * */
+    public function changeLang($arr,$lang_arr){
+        foreach($arr as $k=>$v){
+            if(array_key_exists($v,$lang_arr)){
+                $arr[$k]=$lang_arr[$v];
+            }
+        }
+        return $arr;
+    }
+
 }
