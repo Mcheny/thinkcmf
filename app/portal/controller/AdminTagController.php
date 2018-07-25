@@ -37,10 +37,10 @@ class AdminTagController extends AdminBaseController
     {
         $portalTagModel = new PortalTagModel();
         $tags           = $portalTagModel->paginate();
-
         $this->assign("arrStatus", $portalTagModel::$STATUS);
         $this->assign("tags", $tags);
         $this->assign('page', $tags->render());
+
         return $this->fetch();
     }
 

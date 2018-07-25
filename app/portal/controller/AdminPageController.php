@@ -39,11 +39,9 @@ class AdminPageController extends AdminBaseController
         $postService = new PostService();
         $data        = $postService->adminPageList($param);
         $data->appends($param);
-
         $this->assign('keyword', isset($param['keyword']) ? $param['keyword'] : '');
         $this->assign('pages', $data->items());
         $this->assign('page', $data->render());
-
         return $this->fetch();
     }
 

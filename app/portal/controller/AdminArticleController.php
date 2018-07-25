@@ -35,6 +35,7 @@ class AdminArticleController extends AdminBaseController
     public function index()
     {
 
+
     
         $param = $this->request->param();
 

@@ -25,6 +25,7 @@ class TagController extends HomeBaseController
             $tag = $portalTagModel->where('id', $id)->where('status', 1)->find();
         }else{
             $tag = $portalTagModel->where('name', $id)->where('status', 1)->find();
+
         }
 
 
